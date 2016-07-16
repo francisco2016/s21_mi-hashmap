@@ -81,6 +81,16 @@ public class MiHashMap
         return sol;
     }
     
+    /**
+     * devuelve true si el mapa no contiene elementos.
+     */
+    public boolean isEmpty(){
+        boolean empty = true;
+        if(claves.length > 0){
+            empty = false;
+        }
+        return empty;
+    }
 }
 
 
