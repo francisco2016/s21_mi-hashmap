@@ -91,6 +91,13 @@ public class MiHashMap
         }
         return empty;
     }
+    
+    /**
+     * devuelve el número de elementos del mapa.
+     */
+    public int size(){
+        return claves.length;
+    }
 }
 
 
