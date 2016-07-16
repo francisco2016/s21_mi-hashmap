@@ -1,3 +1,4 @@
+
 import java.util.Arrays;
 /**
  * Write a description of class MiHashMap here.
@@ -43,7 +44,7 @@ public class MiHashMap
             index ++;
         }
         //Ahora supongo que la clave no existe, luego, tengo que aumentar la colección para almacenar la clave y su valor¡¡¡.
-        if(!encontrado){
+         if(!encontrado){
             int[] valores2 = new int[valores.length + 1];
             String[] claves2 = new String[claves.length + 1];
             //creamos un bucle para copiar "valores" en "valores2".
@@ -60,47 +61,47 @@ public class MiHashMap
             claves = claves2;
             valores = valores2;
         }
-        
         return sol; //devuelvo el valor.
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        //         int sol = 0;///////////////////////////////////añadido el 16-07-2016 //////////////////////////////
-        //         int index = 0;
-        //         boolean claveRepetida = false;
-        //         while (index<valores.length && !claveRepetida ) {
-        //             if (clave == claves[index]) {
-        //                 claveRepetida = true;
-        //                 sol = valores[index];///////////////////////añadido el 16-07-2016 //////////////////////////////////////
-        //                 valores[index] = valor;
-        //             }
-        //             index++;
-        //         }
-        //         if (!claveRepetida) {
-        //             sol = -1;
-        //             //index = -1;
-        //             int cont = 0;
-        //             String[] nuevasClaves = new String[claves.length + 1];
-        //             int[] nuevosValores = new int[valores.length + 1];
-        //             while (cont<claves.length) {
-        //                 nuevasClaves[cont] = claves[cont];
-        //                 nuevosValores[cont] = valores[cont];                
-        //                 cont++;
-        //             }
-        //             nuevasClaves[nuevasClaves.length - 1] = clave;
-        //             nuevosValores[nuevosValores.length - 1] = valor;
-        //             claves = nuevasClaves;
-        //             valores = nuevosValores;
-        //         }
-        //         return sol;////////////////////////////////////  añadido el 16-07-2016//////////////////////////////////////////
-        //         //return index; ////////////////////////////// comentado el 16-07-2016//////////////////////////////////////////////
     }
+    
+    /**
+     * Devuelve el valor asociado con la clave especificada o -1 en caso de que la clave no exista.
+     */
+    public int get(String clave){
+        int sol = -1;
+        int cont = 0;
+        boolean encontrado = false;
+        while(cont < claves.length && !encontrado){
+            if(claves[cont] == clave){
+               sol = valores[cont];
+               encontrado = true;
+            }
+            cont ++;
+        }
+        return sol;
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
