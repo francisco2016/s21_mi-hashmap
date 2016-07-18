@@ -1,28 +1,19 @@
 
 import java.util.Arrays;
 /**
- * Write a description of class MiHashMap here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Francisco, septiembre.
  */
 public class MiHashMap
 {
-    //private int[] key;
-    //private String[] value;
     private int[] valores;
     private String[] claves;
-
     /**
      * Constructor for objects of class MiHashMap
      */
     public MiHashMap()
     {
-        // key = new int[0];
-        //value = new String[0];
         valores= new int[0];
         claves = new String[0];
-
     }
 
     /**
@@ -44,7 +35,7 @@ public class MiHashMap
             index ++;
         }
         //Ahora supongo que la clave no existe, luego, tengo que aumentar la colección para almacenar la clave y su valor¡¡¡.
-         if(!encontrado){
+        if(!encontrado){
             int[] valores2 = new int[valores.length + 1];
             String[] claves2 = new String[claves.length + 1];
             //creamos un bucle para copiar "valores" en "valores2".
@@ -63,7 +54,7 @@ public class MiHashMap
         }
         return sol; //devuelvo el valor.
     }
-    
+
     /**
      * Devuelve el valor asociado con la clave especificada o -1 en caso de que la clave no exista.
      */
@@ -73,14 +64,14 @@ public class MiHashMap
         boolean encontrado = false;
         while(cont < claves.length && !encontrado){
             if(claves[cont] == clave){
-               sol = valores[cont];
-               encontrado = true;
+                sol = valores[cont];
+                encontrado = true;
             }
             cont ++;
         }
         return sol;
     }
-    
+
     /**
      * devuelve true si el mapa no contiene elementos.
      */
@@ -91,34 +82,49 @@ public class MiHashMap
         }
         return empty;
     }
-    
+
     /**
      * devuelve el número de elementos del mapa.
      */
     public int size(){
         return claves.length;
     }
+
+    /**
+     * elimina del mapa el elemento con la clave dada y devuelve su valor. Si no hay esa clave en el mapa devuelve -1.
+     */
+    public int remove(String clave){
+        int sol = -1;//VL para retornar la solución.
+        int sol2 = 0; //VL para guardar el índice de la coincidente con la clave dada.
+        int cont = 0;
+        boolean encontrado = false;
+        while(cont < valores.length && !encontrado){
+            if(claves[cont] == clave){
+                sol2 = cont;//almaceno el índice donde se encuentra la clave coincidente con la pasada como parámetro.
+                sol = valores[cont]; //almaceno el valor de la clave.
+                encontrado = true;
+            }
+            cont ++;
+        }
+
+        if(sol2 < claves.length && sol2 >= 0){
+            int[] valores3 = valores;
+            valores = new int[valores3.length -1];
+            String[] claves3 = claves;
+            claves = new String[claves.length -1];
+
+            for(int i = 0; i < sol2; i ++){                   
+                valores[i] = valores3[i];
+                claves[i] = claves3[i];
+            }
+            for(int z = sol2; z < claves.length; z ++){
+                sol2 = cont;
+                valores[z] = valores3[z +1];
+                claves[z] = claves3[z +1];
+            }
+
+        }
+        return sol;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
