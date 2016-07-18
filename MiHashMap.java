@@ -126,5 +126,45 @@ public class MiHashMap
         }
         return sol;
     }
+    
+    /**
+     * vacía el mapa.
+     */
+    public void clear(){
+          valores = new int[0];;
+          claves = new String[0];;
+        
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
