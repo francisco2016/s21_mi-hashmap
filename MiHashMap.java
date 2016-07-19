@@ -135,6 +135,21 @@ public class MiHashMap
           claves = new String[0];;
         
     }
+    
+    /**
+     *Devuelve true si el mapa contiene la clave dada.
+     */
+    public boolean containsKey(String clave){
+        boolean conClaves = false;
+        int cont = 0;
+        while( cont < claves.length && !conClaves){
+            if(claves[cont].equals(clave)){
+                conClaves = true;
+            }
+            cont ++;
+        }
+        return conClaves;
+    }
 }
 
 
