@@ -150,6 +150,21 @@ public class MiHashMap
         }
         return conClaves;
     }
+    
+    /**
+     * Devuelve true si el mapa contiene el valor dado.
+     */
+    public boolean containsValue(int valor){
+        boolean conValor = false;
+        int cont = 0;
+        while( cont < valores.length && !conValor){
+            if(valores[cont] == valor){
+                conValor = true;
+            }
+            cont ++;
+        }
+        return conValor;
+    }
 }
 
 
